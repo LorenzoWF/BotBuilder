@@ -19,11 +19,16 @@ def testeGet():
 @app.route('/teste', methods=['POST'])
 def testePost():
   content = request.json
-  python_obj = json.dumps(request.json)
-  python_obj = python_obj.replace("{", "")
-  python_obj = python_obj.replace("}", "")
-  python_obj = python_obj.replace('\"', "")
-  print(type(python_obj))
+  #python_obj = json.dumps(request.json)
+  #python_obj = python_obj.replace("{", "")
+  #python_obj = python_obj.replace("}", "")
+  #python_obj = python_obj.replace('\"', "")
+  #print(type(content))
+  teste = ""
+  for key, value in content.items() :
+    teste = teste + key + "|"
+    #print (key)
+
 
   #json_response = {"messages": [
     #                    {"text": "Tu tem " + content['idade'] + " anos"},
@@ -61,14 +66,14 @@ def testePost():
 
 
   json_response = {"messages": [
-                        {"text": python_obj}
+                        {"text": teste}
                     ]
                   }
 
   return jsonify(json_response)
 
 if __name__ == '__main__':
-  port = int(os.environ.get('PORT', 5000))
+  #port = int(os.environ.get('PORT', 5000))
   #app.run(host='192.168.9.206', port=port)
   #app.run(host='localhost')
   #app.run(host='192.168.9.206')
