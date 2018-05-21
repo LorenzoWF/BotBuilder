@@ -24,7 +24,7 @@ def testePost():
 
     json_response = {"messages": [
                         {"text": "TESTE 1"},
-                        {"text": "TESTE 2"}
+                        {"text": "teste " + request.form.get('idade')}
                      ]
                    }
     return jsonify(json_response)
