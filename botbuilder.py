@@ -17,6 +17,7 @@ def testeGet():
 @app.route('/teste', methods=['POST'])
 def testePost():
   content = request.json
+  print(content)
   #json_response = {"messages": [
     #                    {"text": "Tu tem " + content['idade'] + " anos"},
     #                    {"text": content['idade'] + " centrimetros de altura"},
