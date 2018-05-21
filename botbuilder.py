@@ -17,63 +17,17 @@ def testeGet():
 
 @app.route('/teste', methods=['POST'])
 def testePost():
-  #content = request.json
-  #content = request.values
-  #python_obj = json.dumps(request.json)
-  #python_obj = python_obj.replace("{", "")
-  #python_obj = python_obj.replace("}", "")
-  #python_obj = python_obj.replace('\"', "")
-  #print(type(content))
-  #print(request.form.get('idade'))
-  #teste = "teste" + request.form.get('idade')
-  #teste = "teste"
-  #for key, value in content.items() :
-    #teste = teste + key + "|"
-    #print (key)
+    #content = request.json
+    #string = "teste var"
+    #python_obj = json.dumps(request.json)
+    #print(type(python_obj))
 
-
-  #json_response = {"messages": [
-    #                    {"text": "Tu tem " + content['idade'] + " anos"},
-    #                    {"text": content['idade'] + " centrimetros de altura"},
-    #                    {"text": "e pesa " + content['peso'] + " quilos"}
-    #                ]
-    #              }
-
-  #json_response = [{"attachment":{
-    #                    "type":"template",
-    #                    "payload":{
-    #                    "template_type":"generic",
-    #                        "elements":[{
-                                    #"messages": [
-                                    #                      {"text": "Tu tem " + content['idade'] + " anos"},
-                                    #                      {"text": content['idade'] + " centrimetros de altura"},
-                                    #                      {"text": "e pesa " + content['peso'] + " quilos"}
-                                    #                  ]
-
-    #                            "title":"TESTE TITULO",
-    #                            "subtitle": content
-                                #"buttons":[{
-                                #    "type":"web_url",
-                                #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
-                                #    "title":"Aplicar"
-                                #},
-                                #{
-                                #    "type":"web_url",
-                                #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
-                                #    "title":"Mas Informacion"
-                                #}]
-    #                        }]
-    #                    }
-    #                }}]
-
-
-   json_response = {"messages": [
+    json_response = {"messages": [
                         {"text": "TESTE 1"},
                         {"text": "TESTE 2"}
                      ]
                    }
-
-  return jsonify(json_response)
+    return jsonify(json_response)
 
 if __name__ == '__main__':
   #port = int(os.environ.get('PORT', 5000))
