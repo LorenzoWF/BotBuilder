@@ -17,14 +17,11 @@ def testeGet():
 
 @app.route('/teste', methods=['POST'])
 def testePost():
-    #content = request.json
-    #string = "teste var"
-    #python_obj = json.dumps(request.json)
-    #print(type(python_obj))
 
     json_response = {"messages": [
-                        {"text": "TESTE 1"},
-                        {"text": "teste " + request.form.get('idade')}
+                        {"text": "Tu tem " + request.form.get('idade') + " anos"},
+                        {"text": "Tu pesa " + request.form.get('pesa') + " quilos"},
+                        {"text": "Tu mede " + request.form.get('altura') + " centimetros de altura"}
                      ]
                    }
     return jsonify(json_response)
@@ -32,6 +29,4 @@ def testePost():
 if __name__ == '__main__':
   #port = int(os.environ.get('PORT', 5000))
   #app.run(host='192.168.9.206', port=port)
-  #app.run(host='localhost')
-  #app.run(host='192.168.9.206')
   app.run()
