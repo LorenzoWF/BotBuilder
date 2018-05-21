@@ -1,1 +1,1 @@
-web: python botbuilder.py
+web: gunicorn botbuilder:app
