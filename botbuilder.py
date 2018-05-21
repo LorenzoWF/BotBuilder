@@ -36,7 +36,7 @@ def testePost():
                                     #                  ]
 
                                 "title":"TESTE TITULO",
-                                "subtitle":"teste subtitulo",
+                                "subtitle": request.json,
                                 #"buttons":[{
                                 #    "type":"web_url",
                                 #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
