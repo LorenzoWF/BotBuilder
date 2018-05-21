@@ -24,19 +24,19 @@ def testePost():
     #                ]
     #              }
 
-  json_response = [{"attachment":{
-                        "type":"template",
-                        "payload":{
-                        "template_type":"generic",
-                            "elements":[{
+  #json_response = [{"attachment":{
+    #                    "type":"template",
+    #                    "payload":{
+    #                    "template_type":"generic",
+    #                        "elements":[{
                                     #"messages": [
                                     #                      {"text": "Tu tem " + content['idade'] + " anos"},
                                     #                      {"text": content['idade'] + " centrimetros de altura"},
                                     #                      {"text": "e pesa " + content['peso'] + " quilos"}
                                     #                  ]
 
-                                "title":"TESTE TITULO",
-                                "subtitle": request.json,
+    #                            "title":"TESTE TITULO",
+    #                            "subtitle": content
                                 #"buttons":[{
                                 #    "type":"web_url",
                                 #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
@@ -47,9 +47,17 @@ def testePost():
                                 #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
                                 #    "title":"Mas Informacion"
                                 #}]
-                            }]
-                        }
-                    }}]
+    #                        }]
+    #                    }
+    #                }}]
+
+
+  json_response = {"messages": [
+                        {"text": "TESTE 1"},
+                        {"text": "TESTE 2"},
+                        {"text": "TESTE 3"}
+                    ]
+                  }
 
   return jsonify(json_response)
 
