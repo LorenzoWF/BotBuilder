@@ -19,9 +19,9 @@ def testeGet():
 def testePost():
 
     json_response = {"messages": [
-                        {"text": "Tu tem " + request.form.get('idade') + " anos"},
-                        {"text": "Tu pesa " + request.form.get('pesa') + " quilos"},
-                        {"text": "Tu mede " + request.form.get('altura') + " centimetros de altura"}
+                        {"text": "Tu tem " + str(request.form.get('idade')) + " anos"},
+                        {"text": "Tu pesa " + str(request.form.get('peso')) + " quilos"},
+                        {"text": "Tu mede " + str(request.form.get('altura')) + " centimetros de altura"}
                      ]
                    }
     return jsonify(json_response)
