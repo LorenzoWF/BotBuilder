@@ -27,7 +27,7 @@ def testePost():
   #print(type(content))
   #print(request.form.get('idade'))
   #teste = "teste" + request.form.get('idade')
-  teste = "teste"
+  #teste = "teste"
   #for key, value in content.items() :
     #teste = teste + key + "|"
     #print (key)
@@ -68,11 +68,11 @@ def testePost():
     #                }}]
 
 
-  json_response = {"messages": [
-                        {"text": "TESTE COM TEXTO"},
-                        {"text": "TESTE COM TEXTO2"}
-                    ]
-                  }
+   json_response = {"messages": [
+                        {"text": "TESTE 1"},
+                        {"text": "TESTE 2"}
+                     ]
+                   }
 
   return jsonify(json_response)
 
