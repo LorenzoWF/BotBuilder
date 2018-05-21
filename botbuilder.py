@@ -26,7 +26,7 @@ def testePost():
   #python_obj = python_obj.replace('\"', "")
   print(type(content))
   print(request.form.get('idade'))
-  teste = request.form.get('idade')
+  teste = "teste" + request.form.get('idade')
   #for key, value in content.items() :
     #teste = teste + key + "|"
     #print (key)
