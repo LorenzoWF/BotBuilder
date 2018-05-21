@@ -29,25 +29,25 @@ def testePost():
                         "payload":{
                         "template_type":"generic",
                             "elements":[{
-                                    "messages": [
-                                                          {"text": "Tu tem " + content['idade'] + " anos"},
-                                                          {"text": content['idade'] + " centrimetros de altura"},
-                                                          {"text": "e pesa " + content['peso'] + " quilos"}
-                                                      ]
+                                    #"messages": [
+                                    #                      {"text": "Tu tem " + content['idade'] + " anos"},
+                                    #                      {"text": content['idade'] + " centrimetros de altura"},
+                                    #                      {"text": "e pesa " + content['peso'] + " quilos"}
+                                    #                  ]
 
-                        #        "title":"Cajeros Bbva",
-                        #        "subtitle":"Reconocida entidad financiera requiere estudiantes activos de 5 semestre en adelante de JORNADA DIURNA/NOCTURNO/ RECIÉN EGRESADOS en carreras administrativas ...",
-                        #        "buttons":[{
-                        #            "type":"web_url",
-                        #            "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
-                        #            "title":"Aplicar"
-                        #        },
-                        #        {
-                        #            "type":"web_url",
-                        #            "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
-                        #            "title":"Mas Informacion"
-                                }]
-                            #}]
+                                "title":"TESTE TITULO",
+                                "subtitle":"teste subtitulo",
+                                #"buttons":[{
+                                #    "type":"web_url",
+                                #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
+                                #    "title":"Aplicar"
+                                #},
+                                #{
+                                #    "type":"web_url",
+                                #    "url":"https://www.facebook.com/oferta/c2fa78cfdbc21585",
+                                #    "title":"Mas Informacion"
+                                #}]
+                            }]
                         }
                     }}]
 
