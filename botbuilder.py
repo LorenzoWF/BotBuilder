@@ -2,8 +2,6 @@ from flask import Flask, jsonify, request, render_template, safe_join, send_from
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 import os
-import json
-import requests
 
 app = Flask(__name__)
 
