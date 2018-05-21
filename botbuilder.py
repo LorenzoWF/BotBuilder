@@ -69,7 +69,8 @@ def testePost():
 
 
   json_response = {"messages": [
-                        {"text": "TESTE COM TEXTO"}
+                        {"text": "TESTE COM TEXTO"},
+                        {"text": "TESTE COM TEXTO2"}
                     ]
                   }
 
