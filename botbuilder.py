@@ -19,14 +19,15 @@ def testeGet():
 @app.route('/teste', methods=['POST'])
 def testePost():
   #content = request.json
-  content = request.values
+  #content = request.values
   #python_obj = json.dumps(request.json)
   #python_obj = python_obj.replace("{", "")
   #python_obj = python_obj.replace("}", "")
   #python_obj = python_obj.replace('\"', "")
-  print(type(content))
-  print(request.form.get('idade'))
-  teste = "teste" + request.form.get('idade')
+  #print(type(content))
+  #print(request.form.get('idade'))
+  #teste = "teste" + request.form.get('idade')
+  teste = "teste"
   #for key, value in content.items() :
     #teste = teste + key + "|"
     #print (key)
