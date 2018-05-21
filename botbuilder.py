@@ -20,6 +20,9 @@ def testeGet():
 def testePost():
   content = request.json
   python_obj = json.dumps(request.json)
+  python_obj = python_obj.replace("{", "")
+  python_obj = python_obj.replace("}", "")
+  python_obj = python_obj.replace('\"', "")
   print(type(python_obj))
 
   #json_response = {"messages": [
