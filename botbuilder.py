@@ -80,7 +80,26 @@ def responderDuvida():
                    }
     return jsonify(json_response)
 
+'''@app.route('/performance', methods=['POST'])
+def receberPerformance():
+    return 1'''
 
+@app.route('/exercicio', methods=['POST'])
+def passarExercicio():
+    json_response = {"messages": [
+                        {"text": 'Exercicio!'},
+                        {"text": 'descricao!'},
+                        {"attachment": {
+                                "type": "image",
+                                "payload": {
+                                  "url": "https://rockets.chatfuel.com/assets/welcome.png"
+                                }
+                            }
+                        }
+                     ]
+                   }
+
+    return jsonify(json_response)
 
 @app.route('/passarTreino', methods=['POST'])
 def passarTreino():
