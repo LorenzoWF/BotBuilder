@@ -92,7 +92,8 @@ def passarExercicio():
                         {"attachment": {
                                 "type": "image",
                                 "payload": {
-                                  "url": "https://rockets.chatfuel.com/assets/welcome.png"
+                                  #"url": "https://rockets.chatfuel.com/assets/welcome.png"
+                                  "url": 'teste.png'
                                 }
                             }
                         }
