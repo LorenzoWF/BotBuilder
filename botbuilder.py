@@ -155,7 +155,7 @@ def passarExercicio():
     elif exercicio.find('voador') >= 0:
         exercicioTitulo     = 'EXECUÇÃO | VOADOR'
         exercicioDescricao  = 'Segure os pegadores verticais, com os cotovelos ligeiramente dobrados.\nTracione simultaneamente os pegadores até que se toquem à frente de seu tórax.\nDeixe suas mãos retornarem à posição inicial, mantendo os cotovelos elevados.'
-        exercicioImagem     = 'triceps_corda'
+        exercicioImagem     = 'voador'
 
     else:
         return mensagemErro('Exercicio nao encontrado. Tente novamente.')
