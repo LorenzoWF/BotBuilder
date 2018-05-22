@@ -593,12 +593,13 @@ def passarTreino():
 
     mensagemMotivacional = "Agora é HORA DO SHOW! BIIIIRRLLL!"
 
+    '''"set_attributes":
+    {
+      "mensagemVezesTreino": mensagemVezesTreino,
+      "mensagemExercicio": mensagemExercicio
+    },'''
+
     json_response = {
-                    "set_attributes":
-                    {
-                      "mensagemVezesTreino": mensagemVezesTreino,
-                      "mensagemExercicio": mensagemExercicio
-                    },
                     "messages": [
                         {"text": mensagemInicial},
                         {"text": mensagemVezesTreino},
