@@ -96,14 +96,77 @@ def uploaded_file(path):
 
 @app.route('/exercicio', methods=['POST'])
 def passarExercicio():
+
+    if request.form.get('exercicio') is None:
+        return mensagemErro('Houve um erro durante a coleta dos dados. Tente novamente.')
+
+    exercicio = request.form.get('exercicio')
+
+    if exercicio.find('agachamento') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | AGACHAMENTO LIVRE'
+        exercicioDescricao  = 'No Agachamento livre:\nEm pé com a barra apoiada nos ombros e os pés afastados em distância igual à largura dos ombros.\nFlexione lentamente os joelhos até que as coxas fiquem paralelas ao chão.\nEstenda as pernas para retornar à posição inicial (em pé).'
+        exercicioImagem     = 'agachamento_livre'
+
+    elif exercicio.find('crucifixo') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | CRUCIFIXO INCLINADO'
+        exercicioDescricao  = 'Para executar o Crucifixo Inclinado:\nSentado em um banco inclinado, comece com os halteres diretamente acima do tórax, com as palmas das mãos voltadas para dentro.\nAbaixe os halteres para fora, dobrando ligeiramente os cotovelos enquanto os pesos descem até o nível do tórax.\nLevante os halteres de volta, unindo-os na parte superior do exercício.'
+        exercicioImagem     = 'crucifixo_inclinado'
+
+    elif exercicio.find('desenvolvimento') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | DESENVOLVIMENTO COM BARRA'
+        exercicioDescricao  = 'Para executar o Desenvolvimento com barra:\nSentado num banco, faça a pegada na barra com afastamento das mãos igual à largura dos ombros; palmas das mãos voltadas para frente.\nAbaixe lentamente o peso (à frente), até que toque a parte superior do tórax.\nImpulsione verticalmente para cima até que ocorra bloqueio dos cotovelos.'
+        exercicioImagem     = 'desenvolvimento_barra'
+
+    elif exercicio.find('leg press') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | LEG PRESS'
+        exercicioDescricao  = 'Sente-se no aparelho de leg press e coloque os pés com afastamento na plataforma igual à largura dos ombros.\nLentamente, abaixe o peso até que os joelhos estejam com 90 graus de flexão.\nEmpurre o peso de volta à posição inicial; para isso, estenda as pernas.'
+        exercicioImagem     = 'leg_press'
+
+    elif exercicio.find('paralela') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | PARALELA'
+        exercicioDescricao  = 'Para executar a Paralela:\nAgarre as barras paralelas, sustentando o corpo com os cotovelos estendidos e bloqueados.\nDobre os cotovelos, baixando o torso até que os braços fiquem paralelos ao chão.\nEmpurre o corpo de volta a posição inicial, isto é, até que seus cotovelos fiquem novamente estendidos.'
+        exercicioImagem     = 'paralela'
+
+    elif exercicio.find('puxador') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | PUXADOR FRONTAL ABERTO'
+        exercicioDescricao  = 'Para executar o Puxador Frontal Aberto:\nFaça uma pegada na barra com o dorso das mãos voltado para cima; as mãos devem ficar a uma distância 15cm maior que a largura dos ombros.\nTracione a barra para baixo, até a parte superior do peito, contraindo os latíssimos.\nRetorne a barra à posição inicial, acima da cabeça.'
+        exercicioImagem     = 'puxador_frontal'
+
+    elif exercicio.find('rosca concentrada') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | ROSCA CONCENTRADA'
+        exercicioDescricao  = 'Para executar a Rosca Concentrada:\nPosição sentada na extremidade do banco. Segure o halter fixo com o braço estendido; apoie o braço contra a parte interna da coxa.\nFaça o exercício de rosca com halter na direção do ombro, flexionando o cotovelo.\nAbaixe o halter de volta a posição inicial.'
+        exercicioImagem     = 'rosca_concentrada'
+
+    elif exercicio.find('rosca') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | ROSCA DIRETA COM BARRA'
+        exercicioDescricao  = 'Para executar a Rosca direta com barra:\nSegure a barra com os braços estendidos; pegada com afastamento igual à distância entre os ombros e com o dorso das mãos voltado para baixo.\nLeve a barra até o nível dos ombros; para tanto, flexione os cotovelos.\nAbaixe a barra de volta à posição inicial, com os braços na posição estendida.'
+        exercicioImagem     = 'rosca_direta_barra'
+
+    elif exercicio.find('supino') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | SUPINO RETO – BARRA'
+        exercicioDescricao  = 'Na posição deitada em um banco plano, faça uma pegada na barra com o dorso das mãos voltado para cima e o afastamento entre elas igual à distância entre os ombros.\nAbaixe lentamente o peso até tocar a parte média do tórax.\nEmpurre a barra diretamente para cima, até que ocorra bloqueio dos cotovelos.'
+        exercicioImagem     = 'supino_reto'
+
+    elif exercicio.find('triceps') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | TRICEPS CORDA'
+        exercicioDescricao  = 'Para executar o Tríceps puxador:\nFaça a pegada com o dorso das mãos voltado para cima e na largura dos ombros em uma barra curta presa a uma polia alta.\nComece com a barra no nível do peito, cotovelos dobrados um pouco mais do que 90 graus.\nMantendo os braços estendidos, tracione a barra para baixo até que os cotovelos fiquem bloqueados.'
+        exercicioImagem     = 'triceps_corda'
+
+    elif exercicio.find('voador') >= 0:
+        exercicioTitulo     = 'EXECUÇÃO | VOADOR'
+        exercicioDescricao  = 'Segure os pegadores verticais, com os cotovelos ligeiramente dobrados.\nTracione simultaneamente os pegadores até que se toquem à frente de seu tórax.\nDeixe suas mãos retornarem à posição inicial, mantendo os cotovelos elevados.'
+        exercicioImagem     = 'triceps_corda'
+
+    else:
+        return mensagemErro('Exercicio nao encontrado. Tente novamente.')
+
     json_response = {"messages": [
-                        {"text": 'Exercicio!'},
-                        {"text": 'descricao!'},
+                        {"text": exercicioTitulo},
+                        {"text": exercicioDescricao},
                         {"attachment": {
                                 "type": "image",
                                 "payload": {
-                                  #"url": "https://rockets.chatfuel.com/assets/welcome.png"
-                                  "url": request.base_url.replace('exercicio', '') + 'img/teste.png'
+                                  "url": request.base_url.replace('exercicio', '') + 'img/' + exercicioImagem + '.png'
                                 }
                             }
                         }
