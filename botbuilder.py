@@ -3,7 +3,12 @@ from bs4 import BeautifulSoup
 from urllib.request import urlopen, Request
 import os
 
+UPLOAD_FOLDER = './static'
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
 
 @app.route('/')
 def index():
@@ -84,6 +89,11 @@ def responderDuvida():
 def receberPerformance():
     return 1'''
 
+
+@app.route('/img/<path>', methods=['GET'])
+def uploaded_file(path):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], path)
+
 @app.route('/exercicio', methods=['POST'])
 def passarExercicio():
     json_response = {"messages": [
@@ -93,7 +103,7 @@ def passarExercicio():
                                 "type": "image",
                                 "payload": {
                                   #"url": "https://rockets.chatfuel.com/assets/welcome.png"
-                                  "url": 'teste.png'
+                                  "url": request.base_url.replace('exercicio', '') + 'img/teste.png'
                                 }
                             }
                         }
