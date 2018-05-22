@@ -60,6 +60,9 @@ def calculaImc():
 @app.route('/passarTreino', methods=['POST'])
 def testePost():
 
+    #if int(request.form.get('cadastrado')) == 1 and int(request.form.get('forcarEnvioTreino')) == 0:
+        #return mensagemErro('Maromba, tu ja ta cadastrado, fica sussa!')
+
     if request.form.get('peso') is None:
         return mensagemErro('O peso não pode ser menor que zero. Tente novamente.')
     elif int(request.form.get('peso')) <= 0:
