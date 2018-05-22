@@ -593,6 +593,9 @@ def passarTreino():
 
     mensagemMotivacional = "Agora é HORA DO SHOW! BIIIIRRLLL!"
 
+    mensagemVezesTreino = mensagemVezesTreino.replace("\n", "")
+    mensagemExercicio = mensagemExercicio.replace("\n", "")
+
     '''"set_attributes":
     {
       "mensagemVezesTreino": mensagemVezesTreino,
